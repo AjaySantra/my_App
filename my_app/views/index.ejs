@@ -1,0 +1,36 @@
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+
+<!-- <form action="/users" method="post">
+  <fieldset>
+    <legend>Create a new user</legend>
+    <label>
+      Username:
+      <input type="string" name="username" />
+      <input type="submit" value="Create user" />
+    </label>
+  </fieldset>
+</form> -->
+<ul>
+  <% users.forEach(function(user) { %>
+    <li>
+      <!-- ... -->
+      <form action="/users/<%= user.id %>/listings" method="post">
+        <fieldset>
+          <legend>Create a new listing</legend>
+          <label>
+            Title:
+            <input name="title" />
+          </label>
+          <label>
+            Description:
+            <input name="description" />
+          </label>
+          <input type="submit" value="Create listing" />
+        </fieldset>
+      </form>
+      <!-- ... -->
+    </li>
+  <% }) %>
+</ul>
+
